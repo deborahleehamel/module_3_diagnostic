@@ -7,6 +7,7 @@ class NrelService
 
   def get_nearest_station(params)
     parse(connection.get("/api/alt-fuel-stations/v1/nearest.json"), params)
+    require "pry"; binding.pry
   end
 
   private
