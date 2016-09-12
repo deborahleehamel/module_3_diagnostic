@@ -5,8 +5,8 @@ class NrelService
     connection.params["api_key"] = ENV[NREL_API_KEY]
   end
 
-  def get_nearest_station(params)
-    parse(connection.get("/api/alt-fuel-stations/v1/nearest.json"), params)
+  def get_nearest_station(zip)
+    parse(connection.get("/api/alt-fuel-stations/nearest.json?location=#{zip}&distance=6&limit=10&fuel_type=ELEC,LPG")
     require "pry"; binding.pry
   end
 

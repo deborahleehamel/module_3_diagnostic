@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def index
-    @stations = Station.all
+    @stations == Station.find_by(params[:q])
   end
 
 end

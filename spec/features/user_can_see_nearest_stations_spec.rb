@@ -15,7 +15,7 @@ RSpec.describe "Find nearest stations" do
     click_on "Locate"
 
 # Then I should be on page "/search" with parameters visible in the url
-    expect(current_path).to eq("/search")
+    expect(current_path).to eq("/search?zip=80203")
 
 # Then I should see a list of the 10 closest stations within 6 miles sorted by distance
     expect(page).to have_selector('.station', count: 10)
