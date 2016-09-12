@@ -6,16 +6,12 @@ class NrelService
   end
 
   def get_nearest_station(params)
+    parse(connection.get("/api/alt-fuel-stations/v1/nearest.json"), params)
   end
 
+  private
 
-
-   def get_nearest_station(params)
-     parse(connection.get("/api/alt-fuel-stations/v1/nearest.json"), params)
-   end
-
-
-
-
-
+  def parse(response)
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
